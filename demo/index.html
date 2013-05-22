@@ -1,0 +1,28 @@
+<html>
+<head>
+  <script src='http://code.jquery.com/jquery-latest.js'></script>
+  <script src='../src/jquery.keymapper.js'></script>
+  <script>
+  $(document).ready(function(){
+
+    $('textarea').keymapper({
+      keys: 'ctrl+s',
+      callback: function() { alert("Saved"); }
+    });
+
+    $('input').keymapper({
+      keys: 'h',
+      callback: function() { alert("H key pressed"); }
+    });
+
+  });
+  </script>
+</head>
+<body>
+  <h1>Test #1</h1>
+  <textarea>Press CTRL+S to save!</textarea>
+
+  <h1>Test #2</h1>
+  <input type='text' value='Press H!'>
+</body>
+</html>
