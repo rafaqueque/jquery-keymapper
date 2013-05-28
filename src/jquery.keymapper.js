@@ -32,7 +32,7 @@
       else
       {
         /* check if a single key is pressed and matches the specified in options */
-        if (String.fromCharCode(event.which) == keys_pressed)
+        if (String.fromCharCode(event.which) == options.keys)
           options.callback();
       }
 
