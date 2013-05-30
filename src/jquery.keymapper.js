@@ -18,21 +18,21 @@
         /* split the keys */
         var keys_combination = options.keys.split('+');
 
-        if (String.fromCharCode(event.keyCode) == keys_combination[1])
+        if (String.fromCharCode(event.keyCode) === keys_combination[1])
         {
           /* if 'ctrl' key is pressed */
-          if (keys_combination[0] == 'CTRL' && event.ctrlKey == true)
+          if (keys_combination[0] === 'CTRL' && event.ctrlKey === true)
             options.callback();
 
           /* if 'shift' key is pressed */
-          if (keys_combination[0] == 'SHIFT' && event.shiftKey == true)
+          if (keys_combination[0] === 'SHIFT' && event.shiftKey === true)
             options.callback();
         }
       }
       else
       {
         /* check if a single key is pressed and matches the specified in options */
-        if (String.fromCharCode(event.which) == options.keys)
+        if (String.fromCharCode(event.which) === options.keys)
           options.callback();
       }
 
@@ -42,7 +42,7 @@
     return this.each(function(){
       
       /* event 'keydown' is listening on the element */
-      $(this).bind('keydown', function(e){
+      $(this).on('keydown', function(e){
         __keyListener(e);
       });
 
